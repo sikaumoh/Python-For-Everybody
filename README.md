@@ -15,10 +15,17 @@
 
 ## Data Structure
 
-Creating ReadMe's for your Github repository can be tedious.  I hope this template can save you time and effort as well as provide you with some consistency across your projects.
+Data Structures are the ways to organize data, read them, and work with them. These are the types of data structures: lists, tuples, and dictionaries.
 
-```html
-    <p>dummy code</p>
+```python
+    # list
+    list = [1, 2, 3]
+
+    # tuple
+    tuple = (1, 2, 3)
+
+    # dictionary
+    dictionary = {a: 1, b: 2, c: 3}
 ```
 
 [Back To The Top](#python-for-everybody)
