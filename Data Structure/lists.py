@@ -48,3 +48,38 @@ email = words[1]
 pieces = email.split('@')
 # print(email)  # prints out stephen.marquard@uct.ac.za
 # print(pieces)  # prints out ['stephen.marquard', 'uct.ac.za']
+
+# Exercises
+# Read files and give out a result
+# 1
+filename = input('Enter file name: ')
+filehandle = open(filename)
+filelist = filehandle.read().split()
+filelist = set(filelist)
+list = sorted(list(filelist))
+# print(list)
+
+# 2
+# Sort words of each line alphabetically
+filename = input('Enter file name: ')
+filehandle = open(filename)
+list = []
+for line in filehandle:
+    line = line.rstrip()  # Remove space on the right
+    line = line.split()  # turn each line into a list
+    for word in line:
+        if word in list: continue
+        list.append(word)
+# print(sorted(list))
+
+# 3
+# Count number of lines starting with 'From:'
+filename = input('Enter file name: ')
+filehandle = open(filename)
+count = 0
+for line in filehandle:
+    if not line.startswith('From:'): continue
+    line = line.rstrip().split()
+    count += 1
+    print(line[1])
+# print('There were', count, 'lines in the file with From as the first word')
