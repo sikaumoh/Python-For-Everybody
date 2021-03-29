@@ -49,6 +49,10 @@ pieces = email.split('@')
 # print(email)  # prints out stephen.marquard@uct.ac.za
 # print(pieces)  # prints out ['stephen.marquard', 'uct.ac.za']
 
+# list comprehension
+c = {'a': 10, 'b': 1, 'c': 22}  # a dictionary
+print(sorted([(v, k) for k, v in c.items()]))
+
 # Exercises
 # Read files and give out a result
 # 1
@@ -83,3 +87,19 @@ for line in filehandle:
     count += 1
     print(line[1])
 # print('There were', count, 'lines in the file with From as the first word')
+
+# 4
+# Example of each line 'From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008'
+# Get the time that's most frequent
+filename = input('Enter file name: ')
+filehandler = open(filename)
+counts = dict()
+for line in filehandler:
+    if not line.startswith('From'): continue
+    line = line.rstrip().split()
+    if len(line) < 3: continue  # guardian against error
+    time = line[5].split(':')  # prints out [09, 14, 16]
+    hours = time[0]
+    counts[hours] = counts.get(hours, 0) + 1
+for k, v in sorted([(k, v) for k, v in counts.items()]):
+    # print(k, v)
