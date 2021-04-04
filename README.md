@@ -75,8 +75,8 @@ data = urllib.request.urlopen(url).read()
 
 ## Database Access
 
-```html
-    <p>dummy code</p>
+```python
+
 ```
 
 [Back To The Top](#python-for-everybody)
